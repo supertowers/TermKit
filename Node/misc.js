@@ -180,13 +180,13 @@ exports.parseArgs = function (tokens) {
       i = 1, m;
 
   for (; i < n; ++i) (function (token) {
-    if (m = /^-([A-Za-z0-9_-])$/(tokens[i])) {
+    if (m = /^-([A-Za-z0-9_-])$/.exec(tokens[i])) {
       options[m[1]] = true;
     }
-    else if( m = /([A-Za-z0-9_-])$/(tokens[i])) {
+    else if( m = /([A-Za-z0-9_-])$/.exec(tokens[i])) {
       options[m[1]] = true;
     }
-    else if (m = /^--([A-Za-z0-9_-]+)$/(tokens[i])) {
+    else if (m = /^--([A-Za-z0-9_-]+)$/.exec(tokens[i])) {
       if (typeof tokens[i + 1] != 'undefined' && tokens[i + 1][0] != '-') {
         ++i;
         options[m[1]] = tokens[i];
@@ -218,7 +218,7 @@ exports.objectKeys = function (object) {
 exports.escapeBinary = function (data) {
   var binary = data.toString('utf-8'), n = binary.length, i = 0;
   return binary.replace(/([\u0000-\u001F])/g, function (x, char) {
-    if (/[^\r\n\t]/(char)) {
+    if (/[^\r\n\t]/.exec(char)) {
       var num = char.charAt(0).toString(16);
       while (num.length < 4) num = '0' + num;
       return '\\u' + num;

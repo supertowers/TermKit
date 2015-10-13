@@ -133,7 +133,7 @@ exports.plugins.text.prototype = extend(new exports.plugin(), {
 
 exports.plugins.text.supports = function (headers) {
   var type = headers.get('Content-Type');
-  return !!(/^text\//(type)) * 1;
+  return !!(/^text\//.exec(type)) * 1;
 }
 
 /**
@@ -217,7 +217,7 @@ exports.plugins.image.prototype = extend(new exports.plugin(), {
 
 exports.plugins.image.supports = function (headers) {
   var type = headers.get('Content-Type');
-  return !!(/^image\//(type)) * 1;
+  return !!(/^image\//.exec(type)) * 1;
 };
 
 /**
@@ -304,7 +304,7 @@ exports.plugins.files.prototype = extend(new exports.plugin(), {
 exports.plugins.files.supports = function (headers) {
   var type = headers.get('Content-Type'),
       schema = headers.get('Content-Type', 'schema');
-  return !!(/^application\/json$/(type) && (schema == 'termkit.files')) * 3;
+  return !!(/^application\/json$/.exec(type) && (schema == 'termkit.files')) * 3;
 };
 
 /**
@@ -331,6 +331,6 @@ exports.plugins.binary.prototype = extend(new exports.plugin(), {
 
 exports.plugins.binary.supports = function (headers) {
   var type = headers.get('Content-Type');
-  return !!(/^application\/octet-stream/(type)) * 1;
+  return !!(/^application\/octet-stream/.exec(type)) * 1;
 }
 
