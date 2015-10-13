@@ -5,10 +5,10 @@ var termkit = {
   version: 1,
   test: true,
 };
-require.paths.unshift('./socket.io-node/lib');
-require.paths.unshift('.');
-require.paths.unshift('shell');
-require.paths.unshift('../Shared/');
+require('app-module-path').addPath('./socket.io-node/lib');
+require('app-module-path').addPath('.');
+require('app-module-path').addPath('shell');
+require('app-module-path').addPath('../Shared/');
 
 var whenDone = require('misc').whenDone;
 var EventEmitter = require("events").EventEmitter;

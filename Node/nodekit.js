@@ -2,8 +2,8 @@
 var termkit = {
   version: 1,
 };
-require.paths.unshift(__dirname);
-require.paths.unshift(__dirname+'/../Shared');
+require('app-module-path').addPath(__dirname);
+require('app-module-path').addPath(__dirname + '/../Shared');
 
 // Load requirements.
 var http = require('http'),  

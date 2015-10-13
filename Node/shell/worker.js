@@ -1,7 +1,7 @@
-require.paths.unshift('.');
-require.paths.unshift('..');
-require.paths.unshift(__dirname);
-require.paths.unshift(__dirname + '/..');
+require('app-module-path').addPath('.');
+require('app-module-path').addPath('..');
+require('app-module-path').addPath(__dirname);
+require('app-module-path').addPath(__dirname + '/..');
 
 var processor = require('processor');
 
