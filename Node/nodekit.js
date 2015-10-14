@@ -6,9 +6,9 @@ require('app-module-path').addPath(__dirname);
 require('app-module-path').addPath(__dirname + '/../Shared');
 
 // Load requirements.
-var http = require('http'),  
-    io = require('socket.io')
-    router = require("router"),
+var http = require('http'),
+    io = require('socket.io'),
+    router = require('router'),
     connect = require('connect');
 
 // Load config file.

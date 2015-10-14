@@ -20,7 +20,9 @@ body {
   width: 24px;
   height: 24px;
   margin: 10px;
+  /*
   background: #000 url('Images/loading-black.gif');
+  */
 }
 
 /************/
@@ -71,11 +73,14 @@ body {
   float: left;
   width: 32px;
   height: 32px;
+  background-size: 100% !important;
 }
 
 .termkitOutputView .widgetFile .name, .termkitOutputView .widgetFile .meta {
   padding-left: 42px;
+  /*
   background: #000;
+  */
 }
 
 .termkitOutputView .widgetFile .name {
@@ -138,6 +143,10 @@ body {
 
 .termkitCommand {
   position: relative;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #E65D50;
+  background-color: #382E27;
 }
 
 .termkitCommand > span.sigil {
@@ -459,7 +468,9 @@ body {
 
 /**************/
 ::-webkit-scrollbar {
+/*
   background: #000;
+  */
   width: 8px;
   height: 8px;
 }
@@ -467,7 +478,9 @@ body {
   width: 30px;
 }
 ::-webkit-scrollbar-track {
+    /*
   background: #000;
+  */
 }
 ::-webkit-scrollbar-thumb {
   background: #333 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#444), to(#333));
